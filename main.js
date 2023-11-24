@@ -8,14 +8,14 @@ let angle = 0;
 let hue = 0;
 let frame = 0;
 let score = 0;
-let gamespeed = 2;
+let gamespeed = 2.5;
 
-//const gradient = ctx.createLinearGradient(0,0,0,90 );
-  //  gradient.addColorStop("0.1", "#fff");
-    //gradient.addColorStop("0.5", "#000");
-    //gradient.addColorStop("0.6", "#4040ff");
-    //gradient.addColorStop("0.75", "#000");
-    //gradient.addColorStop("0.9", "#fff");
+const gradient = ctx.createLinearGradient(0,0,0,90 );
+    gradient.addColorStop("0.2", "#fff");
+    gradient.addColorStop("0.4", "#000");
+    gradient.addColorStop("0.6", "#fff");
+    gradient.addColorStop("0.8", "#000");
+    gradient.addColorStop("1", "#fff");
 
 function animate(){;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -24,7 +24,7 @@ function animate(){;
     bird.update();
     handleParticles();
     bird.draw();
-    ctx.fillStyle = "black";
+    ctx.fillStyle = gradient;
     ctx.font = "90px Comic Sans MS";
     ctx.strokeText(score, 450, 90);
     ctx.fillText(score, 450 ,90),
